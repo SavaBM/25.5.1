@@ -20,9 +20,9 @@ def test_my_pets(driver):
    driver.find_element(By.ID, 'email').send_keys(email)
    # Вводим пароль
    driver.find_element(By.ID, 'pass').send_keys(password)
-   # Добавляем очевидное ожидание
+   # Добавляем явное ожидание
    button = WebDriverWait(driver, 2).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'button[type="submit"]')))
-   # Добавляем неочевидное ожидание
+   # Добавляем неявное ожидание
    driver.implicitly_wait(10)
    button = driver.find_element(By.CSS_SELECTOR, 'button[type="submit"]')
    # Нажимаем на кнопку входа в аккаунт
